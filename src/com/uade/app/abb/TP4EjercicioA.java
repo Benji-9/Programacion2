@@ -22,20 +22,19 @@ public class TP4EjercicioA {
 
         int elemento = 4;
 
-        // Verificar si el elemento está en el ABB
         boolean existe = contieneElementoRec(arbol, elemento);
-        System.out.println("¿El elemento " + elemento + " está en el ABB? " + existe);
+        System.out.println("El elemento " + elemento + " está en el ABB? " + existe);
     }
 
     private static boolean contieneElementoRec(ArbolBinarioTDA arbol, int x) {
         if (arbol.arbolVacio()) {
-            return false; // El árbol está vacío, no contiene el elemento
+            return false; // El arbol está vacío, no contiene el elemento
         } else if (arbol.raiz() == x) {
             return true; // El elemento es igual a la raíz
         } else if (x < arbol.raiz()) {
-            return contieneElementoRec(arbol.hijoIzq(), x); // Buscar en el subárbol izquierdo
+            return contieneElementoRec(arbol.hijoIzq(), x); // Busca en el subarbol izquierdo
         } else {
-            return contieneElementoRec(arbol.hijoDer(), x); // Buscar en el subárbol derecho
+            return contieneElementoRec(arbol.hijoDer(), x); // Busca en el subarbol derecho
         }
     }
 }

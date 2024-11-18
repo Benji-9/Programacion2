@@ -15,7 +15,6 @@ public class TP4EjercicioI {
         abb1.inicializarArbol();
         abb2.inicializarArbol();
 
-        // Insertamos algunos elementos en los ABBs
         abb1.agregarElemento(15);
         abb1.agregarElemento(10);
         abb1.agregarElemento(20);
@@ -24,12 +23,10 @@ public class TP4EjercicioI {
         abb2.agregarElemento(10);
         abb2.agregarElemento(20);
 
-        // Comprobamos si los ABB tienen la misma forma
         boolean mismaForma = tienenMismaForma(abb1, abb2);
         System.out.println("Los ABBs tienen la misma forma: " + mismaForma);
     }
 
-    // Método recursivo para comprobar si dos ABB tienen la misma forma
     private boolean tienenMismaForma(ArbolBinarioTDA abb1, ArbolBinarioTDA abb2) {
         if (abb1.arbolVacio() && abb2.arbolVacio()) {
             return true;

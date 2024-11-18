@@ -13,19 +13,15 @@ public class TP4EjercicioE {
         ArbolBinarioTDA abb = new ArbolBinarioTDAImplD();
         abb.inicializarArbol();
 
-        // Insertamos algunos elementos en el ABB
         abb.agregarElemento(15);
         abb.agregarElemento(10);
         abb.agregarElemento(20);
         abb.agregarElemento(8);
         abb.agregarElemento(12);
 
-        // Calculamos la cantidad de elementos del ABB
         int cantidad = contarElementos(abb);
         System.out.println("La cantidad de elementos en el ABB es: " + cantidad);
     }
-
-    // Método recursivo para contar la cantidad de elementos en el ABB
     private int contarElementos(ArbolBinarioTDA abb) {
         if (abb.arbolVacio()) {
             return 0;

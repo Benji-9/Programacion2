@@ -22,20 +22,19 @@ public class TP4EjercicioB {
 
         int elemento = 7;
 
-        // Verificar si el elemento es una hoja
         boolean esHoja = esHojaRec(arbol, elemento);
-        System.out.println("¿El elemento " + elemento + " es una hoja? " + esHoja);
+        System.out.println("El elemento " + elemento + " es una hoja? " + esHoja);
     }
 
     private static boolean esHojaRec(ArbolBinarioTDA arbol, int x) {
         if (arbol.arbolVacio()) {
-            return false; // Árbol vacío, no puede ser una hoja
+            return false; // arbol vacio, no puede ser una hoja
         } else if (arbol.raiz() == x) {
-            return arbol.hijoIzq().arbolVacio() && arbol.hijoDer().arbolVacio(); // Verificar si ambos hijos son vacíos
+            return arbol.hijoIzq().arbolVacio() && arbol.hijoDer().arbolVacio(); // Verifica si ambos hijos son vacíos
         } else if (x < arbol.raiz()) {
-            return esHojaRec(arbol.hijoIzq(), x); // Buscar en el subárbol izquierdo
+            return esHojaRec(arbol.hijoIzq(), x); // Busca en el subarbol izquierdo
         } else {
-            return esHojaRec(arbol.hijoDer(), x); // Buscar en el subárbol derecho
+            return esHojaRec(arbol.hijoDer(), x); // Busca en el subarbol derecho
         }
     }
 }

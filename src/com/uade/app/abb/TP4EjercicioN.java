@@ -13,7 +13,6 @@ public class TP4EjercicioN {
         ArbolBinarioTDA abb = new ArbolBinarioTDAImplD();
         abb.inicializarArbol();
 
-        // Insertamos algunos elementos en el ABB
         abb.agregarElemento(15);
         abb.agregarElemento(10);
         abb.agregarElemento(20);
@@ -22,35 +21,28 @@ public class TP4EjercicioN {
         abb.agregarElemento(17);
         abb.agregarElemento(25);
 
-        // Dado un elemento, buscamos su anterior inmediato
-        int elemento = 20;
-        Integer anterior = encontrarAnterior(abb, elemento);
-        if (anterior != null) {
+        int elemento = 8;
+        int anterior = encontrarAnterior(abb, elemento);
+        if (anterior != -1) {
             System.out.println("El elemento anterior a " + elemento + " es: " + anterior);
         } else {
             System.out.println("No se encontró un elemento anterior a " + elemento);
         }
     }
 
-    // Metodo para encontrar el elemento anterior inmediato
-    private Integer encontrarAnterior(ArbolBinarioTDA abb, int elemento) {
-        // Nodo que almacenará el anterior inmediato
-        Integer anterior = null;
+    private int encontrarAnterior(ArbolBinarioTDA abb, int elemento) {
+        int anterior = -1;
         while (!abb.arbolVacio()) {
             if (elemento < abb.raiz()) {
-                // Si el elemento buscado es menor, nos movemos a la izquierda
                 abb = abb.hijoIzq();
             } else if (elemento > abb.raiz()) {
-                // Guardamos el nodo actual como anterior y nos movemos a la derecha
                 anterior = abb.raiz();
                 abb = abb.hijoDer();
             } else {
-                // Elemento encontrado, terminamos la búsqueda
                 break;
             }
         }
 
-        // Si encontramos el nodo, buscamos el máximo en el subárbol izquierdo
         if (!abb.arbolVacio()) {
             if (!abb.hijoIzq().arbolVacio()) {
                 abb = abb.hijoIzq();

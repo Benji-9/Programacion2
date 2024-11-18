@@ -13,7 +13,6 @@ public class TP4EjercicioC {
         ArbolBinarioTDA abb = new ArbolBinarioTDAImplD();
         abb.inicializarArbol();
 
-        // Insertamos algunos elementos en el ABB
         abb.agregarElemento(15);
         abb.agregarElemento(10);
         abb.agregarElemento(20);
@@ -22,16 +21,14 @@ public class TP4EjercicioC {
         abb.agregarElemento(28);
         abb.agregarElemento(45);
 
-        // Calculamos la profundidad de un elemento
         int elemento = 45;
         int profundidad = calcularProfundidad(abb, elemento);
         System.out.println("La profundidad del elemento " + elemento + " es: " + profundidad);
     }
 
-    // Método recursivo para calcular la profundidad de un elemento en el ABB
     private int calcularProfundidad(ArbolBinarioTDA abb, int elemento) {
         if (abb.arbolVacio()) {
-            return -1; // Si el elemento no está en el árbol
+            return -1; // Si el elemento no está en el arbol
         } else if (abb.raiz() == elemento) {
             return 0;
         } else if (elemento < abb.raiz()) {

@@ -15,14 +15,12 @@ public class TP4EjercicioM {
         ArbolBinarioTDA abb = new ArbolBinarioTDAImplD();
         abb.inicializarArbol();
 
-        // Insertamos algunos elementos en el ABB
         abb.agregarElemento(15);
         abb.agregarElemento(10);
         abb.agregarElemento(20);
         abb.agregarElemento(8);
         abb.agregarElemento(12);
 
-        // Crear el conjunto de elementos del ABB
         ConjuntoTDA conjunto = new ConjuntoTDAImpl();
         conjunto.inicializarConjunto();
         llenarConjuntoConABB(abb, conjunto);
@@ -35,7 +33,6 @@ public class TP4EjercicioM {
         }
     }
 
-    // Método recursivo para llenar un conjunto con los elementos del ABB
     private void llenarConjuntoConABB(ArbolBinarioTDA abb, ConjuntoTDA conjunto) {
         if (!abb.arbolVacio()) {
             conjunto.agregar(abb.raiz());

@@ -13,14 +13,12 @@ public class TP4EjercicioL {
         ArbolBinarioTDA abb = new ArbolBinarioTDAImplD();
         abb.inicializarArbol();
 
-        // Insertamos algunos elementos en el ABB
         abb.agregarElemento(15);
         abb.agregarElemento(10);
         abb.agregarElemento(20);
         abb.agregarElemento(8);
         abb.agregarElemento(12);
 
-        // Mostrar los elementos del ABB en los tres órdenes
         System.out.println("In-orden:");
         mostrarInOrden(abb);
         System.out.println("\nPre-orden:");
@@ -29,7 +27,6 @@ public class TP4EjercicioL {
         mostrarPostOrden(abb);
     }
 
-    // Método recursivo para mostrar los elementos en in-orden
     private void mostrarInOrden(ArbolBinarioTDA abb) {
         if (!abb.arbolVacio()) {
             mostrarInOrden(abb.hijoIzq());
@@ -38,7 +35,6 @@ public class TP4EjercicioL {
         }
     }
 
-    // Método recursivo para mostrar los elementos en pre-orden
     private void mostrarPreOrden(ArbolBinarioTDA abb) {
         if (!abb.arbolVacio()) {
             System.out.print(abb.raiz() + " ");
@@ -47,7 +43,6 @@ public class TP4EjercicioL {
         }
     }
 
-    // Método recursivo para mostrar los elementos en post-orden
     private void mostrarPostOrden(ArbolBinarioTDA abb) {
         if (!abb.arbolVacio()) {
             mostrarPostOrden(abb.hijoIzq());
