@@ -17,7 +17,6 @@ public class TP3EjercicioB {
         A.inicializarConjunto();
         B.inicializarConjunto();
 
-        // Agregamos elementos a los conjuntos A y B
         A.agregar(1);
         A.agregar(2);
         A.agregar(3);
@@ -25,10 +24,9 @@ public class TP3EjercicioB {
         B.agregar(4);
         B.agregar(5);
 
-        // Calculamos la diferencia simétrica
+
         ConjuntoTDA diferenciaSimetrica = calcularDiferenciaSimetrica(A, B);
 
-        // Mostramos el resultado
         System.out.println("Diferencia simétrica entre A y B:");
         OperacionConjunto.mostrarConjunto(diferenciaSimetrica);
     }

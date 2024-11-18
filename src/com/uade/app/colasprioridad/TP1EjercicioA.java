@@ -44,7 +44,7 @@ public class TP1EjercicioA {
                 combinada.acolarPrioridad(cp1.primero(), cp1.prioridad());
                 cp1.desacolar();
             } else {
-                // Comparamos las prioridades y acoplamos el que tenga mayor prioridad
+                // Comparamos las prioridades y acolamos el que tenga mayor prioridad
                 if (cp1.prioridad() >= cp2.prioridad()) {
                     combinada.acolarPrioridad(cp1.primero(), cp1.prioridad());
                     cp1.desacolar();

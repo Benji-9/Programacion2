@@ -15,14 +15,12 @@ public class TP3EjercicioA {
 
         p1.inicializarPila();
 
-        // Apilamos algunos elementos en la pila
         p1.apilar(1);
         p1.apilar(2);
         p1.apilar(3);
         p1.apilar(2);
         p1.apilar(1);
 
-        // Verificamos si la pila es capicúa
         boolean resultado = OperacionPila.esCapicua(p1);
 
         if (resultado) {

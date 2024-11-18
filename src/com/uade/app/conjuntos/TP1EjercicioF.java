@@ -50,7 +50,6 @@ public class TP1EjercicioF {
         c6.agregar(4);
         c6.agregar(5);
 
-        // Intersección
         ConjuntoTDA interseccionResultado = OperacionConjunto.interseccion(c1, c2);
         System.out.println("Intersección:");
         while (!interseccionResultado.conjuntoVacio()) {
@@ -59,7 +58,6 @@ public class TP1EjercicioF {
             interseccionResultado.sacar(elemento);
         }
 
-        // Unión
         ConjuntoTDA unionResultado = OperacionConjunto.union(c3, c4);
         System.out.println("Unión:");
         while (!unionResultado.conjuntoVacio()) {
@@ -68,7 +66,6 @@ public class TP1EjercicioF {
             unionResultado.sacar(elemento);
         }
 
-        // Diferencia
         ConjuntoTDA diferenciaResultado = OperacionConjunto.diferencia(c5, c6);
         System.out.println("Diferencia (c1 - c2):");
         while (!diferenciaResultado.conjuntoVacio()) {

@@ -54,7 +54,7 @@ public class TP1EjercicioF {
             invertidaC2.desacolar();
         }
 
-        // Si ambas colas están vacías, eran inversas; de lo contrario, no lo son
+        // Si ambas colas se vacian, eran inversas
         return C1.colaVacia() && invertidaC2.colaVacia();
     }
 }

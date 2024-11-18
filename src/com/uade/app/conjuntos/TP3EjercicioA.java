@@ -17,7 +17,6 @@ public class TP3EjercicioA {
         A.inicializarConjunto();
         B.inicializarConjunto();
 
-        // Agregamos elementos a los conjuntos A y B
         A.agregar(1);
         A.agregar(2);
         A.agregar(3);
@@ -25,7 +24,6 @@ public class TP3EjercicioA {
         B.agregar(4);
         B.agregar(5);
 
-        // Calculamos la diferencia simétrica
         ConjuntoTDA diferenciaSimetrica = calcularDiferenciaSimetrica(A, B);
 
         System.out.println("Diferencia simétrica entre A y B:");
@@ -39,7 +37,6 @@ public class TP3EjercicioA {
         ConjuntoTDA tempA = OperacionConjunto.copiarConjunto(A);
         ConjuntoTDA tempB = OperacionConjunto.copiarConjunto(B);
 
-        // Proceso el conjunto A
         while (!tempA.conjuntoVacio()) {
             int elemento = tempA.elegir();
             tempA.sacar(elemento);
@@ -48,7 +45,6 @@ public class TP3EjercicioA {
             }
         }
 
-        // Proceso el conjunto B
         while (!tempB.conjuntoVacio()) {
             int elemento = tempB.elegir();
             tempB.sacar(elemento);

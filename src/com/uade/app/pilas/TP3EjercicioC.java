@@ -19,7 +19,6 @@ public class TP3EjercicioC {
         mitad1.inicializarPila();
         mitad2.inicializarPila();
 
-        // Apilamos elementos (asumiendo un número par de elementos)
         p1.apilar(1);
         p1.apilar(2);
         p1.apilar(3);
@@ -27,14 +26,11 @@ public class TP3EjercicioC {
         p1.apilar(5);
         p1.apilar(6);
 
-        // Mostramos la pila original
         System.out.println("Pila original:");
         OperacionPila.mostrar(p1);
 
-        // Repartimos la pila en dos mitades
         repartirMitades(p1, mitad1, mitad2);
 
-        // Mostramos las mitades
         System.out.println("Mitad 1:");
         OperacionPila.mostrar(mitad1);
 
@@ -47,7 +43,6 @@ public class TP3EjercicioC {
         aux.inicializarPila();
         int total = 0;
 
-        // Contar los elementos
         while (!pila.pilaVacia()) {
             aux.apilar(pila.tope());
             pila.desapilar();
@@ -56,7 +51,6 @@ public class TP3EjercicioC {
 
         int mitad = total / 2;
 
-        // Restaurar y dividir las mitades
         while (!aux.pilaVacia()) {
             int elemento = aux.tope();
             aux.desapilar();

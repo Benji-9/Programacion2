@@ -14,12 +14,10 @@ public class TP3EjercicioD {
         ConjuntoTDA A = new ConjuntoTDAImpl();
         A.inicializarConjunto();
 
-        // Agregamos elementos al conjunto A
         A.agregar(1);
         A.agregar(2);
         A.agregar(3);
 
-        // Calculamos la cardinalidad
         int cardinalidad = calcularCardinalidad(A);
         System.out.println("Cardinalidad del conjunto A: " + cardinalidad);
     }

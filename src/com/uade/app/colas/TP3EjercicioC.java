@@ -17,7 +17,6 @@ public class TP3EjercicioC {
         c1.inicializarCola();
         repetidos.inicializarCola();
 
-        // Acolamos elementos con repeticiones
         c1.acolar(1);
         c1.acolar(2);
         c1.acolar(3);
@@ -26,14 +25,11 @@ public class TP3EjercicioC {
         c1.acolar(3);
         c1.acolar(1);
 
-        // Mostramos la cola original
         System.out.println("Cola original:");
         OperacionCola.mostrar(c1);
 
-        // Obtenemos los elementos repetidos
         obtenerRepetidos(c1, repetidos);
 
-        // Mostramos los elementos repetidos
         System.out.println("Elementos repetidos:");
         OperacionCola.mostrar(repetidos);
     }
@@ -51,7 +47,6 @@ public class TP3EjercicioC {
             boolean encontrado = false;
             boolean repetido = false;
 
-            // Revisamos si el elemento ya se encuentra en aux
             while (!aux.colaVacia()) {
                 int elementoAux = aux.primero();
                 aux.desacolar();
@@ -62,13 +57,11 @@ public class TP3EjercicioC {
                 }
             }
 
-            // Restauramos la cola auxiliar
             while (!temporal.colaVacia()) {
                 aux.acolar(temporal.primero());
                 temporal.desacolar();
             }
 
-            // Si ya se encontró antes, verificamos si ya está en la cola de repetidos
             if (encontrado) {
                 while (!repetidos.colaVacia()) {
                     int elementoRep = repetidos.primero();
@@ -80,7 +73,6 @@ public class TP3EjercicioC {
                     }
                 }
 
-                // Restauramos la cola de repetidos
                 while (!temporal.colaVacia()) {
                     repetidos.acolar(temporal.primero());
                     temporal.desacolar();
@@ -94,7 +86,6 @@ public class TP3EjercicioC {
             }
         }
 
-        // Restauramos la cola original
         while (!aux.colaVacia()) {
             cola.acolar(aux.primero());
             aux.desacolar();

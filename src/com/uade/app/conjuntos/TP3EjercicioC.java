@@ -17,7 +17,6 @@ public class TP3EjercicioC {
         A.inicializarConjunto();
         B.inicializarConjunto();
 
-        // Agregamos elementos a los conjuntos A y B
         A.agregar(1);
         A.agregar(2);
         A.agregar(3);
@@ -25,7 +24,6 @@ public class TP3EjercicioC {
         B.agregar(2);
         B.agregar(3);
 
-        // Verificamos si los conjuntos son iguales
         boolean sonIguales = conjuntosIguales(A, B);
         System.out.println("¿Son iguales los conjuntos A y B? " + (sonIguales ? "Sí" : "No"));
     }
@@ -43,7 +41,6 @@ public class TP3EjercicioC {
             }
         }
 
-        // Verificamos que no haya elementos en B que no estén en A
         while (!tempB.conjuntoVacio()) {
             int elemento = tempB.elegir();
             tempB.sacar(elemento);

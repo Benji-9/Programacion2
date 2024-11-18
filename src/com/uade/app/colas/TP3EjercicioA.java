@@ -14,7 +14,6 @@ public class TP3EjercicioA {
         ColaTDA c1 = new ColaTDAImpl();
         c1.inicializarCola();
 
-        // Acolamos elementos con repeticiones
         c1.acolar(1);
         c1.acolar(2);
         c1.acolar(3);
@@ -23,14 +22,11 @@ public class TP3EjercicioA {
         c1.acolar(3);
         c1.acolar(1);
 
-        // Mostramos la cola original
         System.out.println("Cola original:");
         OperacionCola.mostrar(c1);
 
-        // Eliminamos los elementos repetidos
         eliminarRepetidos(c1);
 
-        // Mostramos la cola sin repeticiones
         System.out.println("Cola sin repeticiones:");
         OperacionCola.mostrar(c1);
     }
@@ -47,7 +43,6 @@ public class TP3EjercicioA {
 
             boolean repetido = false;
 
-            // Revisamos si el elemento ya se encuentra en la cola auxiliar
             while (!aux.colaVacia()) {
                 int elementoAux = aux.primero();
                 aux.desacolar();
@@ -58,19 +53,16 @@ public class TP3EjercicioA {
                 }
             }
 
-            // Restauramos la cola auxiliar
             while (!temporal.colaVacia()) {
                 aux.acolar(temporal.primero());
                 temporal.desacolar();
             }
 
-            // Si no es repetido, lo agregamos a la cola auxiliar
             if (!repetido) {
                 aux.acolar(actual);
             }
         }
 
-        // Restauramos la cola original
         while (!aux.colaVacia()) {
             cola.acolar(aux.primero());
             aux.desacolar();

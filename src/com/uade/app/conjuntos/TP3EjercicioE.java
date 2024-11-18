@@ -21,20 +21,17 @@ public class TP3EjercicioE {
         P.inicializarPila();
         C.inicializarCola();
 
-        // Agregamos elementos a la Pila P
         P.apilar(1);
         P.apilar(2);
         P.apilar(3);
 
-        // Agregamos elementos a la Cola C
         C.acolar(3);
         C.acolar(2);
         C.acolar(4);
 
-        // Generamos el conjunto de elementos comunes entre Pila y Cola
+
         ConjuntoTDA comunes = elementosComunesPilaCola(P, C);
 
-        // Mostramos los elementos comunes
         System.out.println("Elementos comunes entre Pila P y Cola C:");
         OperacionConjunto.mostrarConjunto(comunes);
     }
@@ -43,7 +40,6 @@ public class TP3EjercicioE {
         ConjuntoTDA conjuntoPila = generarConjuntoDesdePila(P);
         ConjuntoTDA conjuntoCola = generarConjuntoDesdeCola(C);
 
-        // Intersección de ambos conjuntos
         return OperacionConjunto.interseccion(conjuntoPila, conjuntoCola);
     }
 
@@ -54,15 +50,13 @@ public class TP3EjercicioE {
         PilaTDA auxPila = new PilaTDAImpl();
         auxPila.inicializarPila();
 
-        // Pasamos los elementos de la Pila al conjunto
         while (!P.pilaVacia()) {
             int elemento = P.tope();
             conjunto.agregar(elemento);
-            auxPila.apilar(elemento); // Guardamos los elementos en la pila auxiliar
+            auxPila.apilar(elemento);
             P.desapilar();
         }
 
-        // Restauramos la pila original
         while (!auxPila.pilaVacia()) {
             int elemento = auxPila.tope();
             P.apilar(elemento);
@@ -79,15 +73,13 @@ public class TP3EjercicioE {
         ColaTDA auxCola = new ColaTDAImpl();
         auxCola.inicializarCola();
 
-        // Pasamos los elementos de la Cola al conjunto
         while (!C.colaVacia()) {
             int elemento = C.primero();
             conjunto.agregar(elemento);
-            auxCola.acolar(elemento); // Guardamos los elementos en la cola auxiliar
+            auxCola.acolar(elemento);
             C.desacolar();
         }
 
-        // Restauramos la cola original
         while (!auxCola.colaVacia()) {
             int elemento = auxCola.primero();
             C.acolar(elemento);

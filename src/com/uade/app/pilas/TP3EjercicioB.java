@@ -39,30 +39,26 @@ public class TP3EjercicioB {
             pila.desapilar();
 
             boolean repetido = false;
-            // Revisamos si ya se ha almacenado el elemento en la pila auxiliar
             while (!aux.pilaVacia()) {
                 int elementoAux = aux.tope();
                 aux.desapilar();
-                temporal.apilar(elementoAux); // Guardamos temporalmente
+                temporal.apilar(elementoAux);
 
                 if (elementoAux == actual) {
                     repetido = true;
                 }
             }
 
-            // Restauramos la pila auxiliar
             while (!temporal.pilaVacia()) {
                 aux.apilar(temporal.tope());
                 temporal.desapilar();
             }
 
-            // Si no es repetido, lo guardamos en la pila auxiliar
             if (!repetido) {
                 aux.apilar(actual);
             }
         }
 
-        // Restauramos la pila original
         while (!aux.pilaVacia()) {
             pila.apilar(aux.tope());
             aux.desapilar();

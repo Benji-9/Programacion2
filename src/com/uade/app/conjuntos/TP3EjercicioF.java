@@ -20,17 +20,14 @@ public class TP3EjercicioF {
         P.inicializarPila();
         C.inicializarCola();
 
-        // Agregamos elementos a la Pila P
         P.apilar(1);
         P.apilar(2);
         P.apilar(3);
 
-        // Agregamos elementos a la Cola C
         C.acolar(3);
         C.acolar(2);
         C.acolar(1);
 
-        // Verificamos si los elementos de la Pila y la Cola son los mismos
         boolean sonIguales = elementosPilaIgualesCola(P, C);
 
         System.out.println("¿Los elementos de la Pila P y la Cola C son los mismos? " + (sonIguales ? "Sí" : "No"));
@@ -40,7 +37,6 @@ public class TP3EjercicioF {
         ConjuntoTDA conjuntoPila = generarConjuntoDesdePila(P);
         ConjuntoTDA conjuntoCola = generarConjuntoDesdeCola(C);
 
-        // Verificamos si ambos conjuntos son iguales
         return conjuntosIguales(conjuntoPila, conjuntoCola);
     }
 
@@ -51,7 +47,6 @@ public class TP3EjercicioF {
         PilaTDA auxPila = new PilaTDAImpl();
         auxPila.inicializarPila();
 
-        // Pasamos los elementos de la Pila al conjunto
         while (!P.pilaVacia()) {
             int elemento = P.tope();
             conjunto.agregar(elemento);
@@ -59,7 +54,6 @@ public class TP3EjercicioF {
             P.desapilar();
         }
 
-        // Restauramos la pila original
         while (!auxPila.pilaVacia()) {
             int elemento = auxPila.tope();
             P.apilar(elemento);
@@ -76,7 +70,6 @@ public class TP3EjercicioF {
         ColaTDA auxCola = new ColaTDAImpl();
         auxCola.inicializarCola();
 
-        // Pasamos los elementos de la Cola al conjunto
         while (!C.colaVacia()) {
             int elemento = C.primero();
             conjunto.agregar(elemento);
@@ -84,7 +77,6 @@ public class TP3EjercicioF {
             C.desacolar();
         }
 
-        // Restauramos la cola original
         while (!auxCola.colaVacia()) {
             int elemento = auxCola.primero();
             C.acolar(elemento);
@@ -107,7 +99,6 @@ public class TP3EjercicioF {
             }
         }
 
-        // Verificamos que no haya elementos en B que no estén en A
         while (!tempB.conjuntoVacio()) {
             int elemento = tempB.elegir();
             tempB.sacar(elemento);
