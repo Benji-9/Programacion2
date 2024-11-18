@@ -14,13 +14,13 @@ public class OperacionDiccionario {
 
             // Recuperamos los valores asociados a la clave
             ConjuntoTDA prioridades = diccionario.recuperar(clave);
-            System.out.println("Valor: " + clave + " tiene las siguientes prioridades:");
+            System.out.println("clave: " + clave + " tiene las siguientes valores:");
 
             // Mostramos las prioridades
             while (!prioridades.conjuntoVacio()) {
                 int prioridad = prioridades.elegir();
                 prioridades.sacar(prioridad);
-                System.out.println("  Prioridad: " + prioridad);
+                System.out.println("  valores: " + prioridad);
             }
         }
     }
