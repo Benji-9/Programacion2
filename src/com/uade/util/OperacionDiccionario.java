@@ -24,4 +24,21 @@ public class OperacionDiccionario {
             }
         }
     }
+
+    public static void mostrarDiccionarioMultiple(DiccionarioMultipleTDA DS) {
+        ConjuntoTDA claves = DS.claves();
+        while (!claves.conjuntoVacio()) {
+            int clave = claves.elegir();
+            System.out.print("Significado " + clave + ": ");
+            ConjuntoTDA valores = DS.recuperar(clave);
+
+            while (!valores.conjuntoVacio()) {
+                int valor = valores.elegir();
+                System.out.print(valor + " ");
+                valores.sacar(valor);
+            }
+            System.out.println();
+            claves.sacar(clave);
+        }
+    }
 }

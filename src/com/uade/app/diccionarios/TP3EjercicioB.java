@@ -25,7 +25,7 @@ public class TP3EjercicioB {
 
         DiccionarioMultipleTDA DS = generarDiccionarioMultiple(D);
 
-        OperacionDiccionario.mostrarDiccionario(DS);
+        OperacionDiccionario.mostrarDiccionarioMultiple(DS);
     }
 
     private DiccionarioMultipleTDA generarDiccionarioMultiple(DiccionarioSimpleTDA D) {
