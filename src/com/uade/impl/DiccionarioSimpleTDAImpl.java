@@ -13,7 +13,7 @@ public class DiccionarioSimpleTDAImpl implements DiccionarioSimpleTDA {
 
     public void inicializarDiccionario() {
         elementos = new Elemento[100];
-        cant++;
+        cant = 0;
     }
 
     public void agregar(int clave, int valor) {
@@ -25,14 +25,6 @@ public class DiccionarioSimpleTDAImpl implements DiccionarioSimpleTDA {
             cant++;
         }
         elementos[pos].valor = valor;
-    }
-
-    private int Clave2Indice(int clave) {
-        int i = cant - 1;
-        while (i >= 0 && elementos[i].clave != clave) {
-            i--;
-        }
-        return i;
     }
 
     public void eliminar(int clave) {
@@ -55,5 +47,13 @@ public class DiccionarioSimpleTDAImpl implements DiccionarioSimpleTDA {
             c.agregar(elementos[i].clave);
         }
         return c;
+    }
+
+    private int Clave2Indice(int clave) {
+        int i = cant - 1;
+        while (i >= 0 && elementos[i].clave != clave) {
+            i--;
+        }
+        return i;
     }
 }
