@@ -1,0 +1,61 @@
+1)
+    A)                           41
+                       32               70
+                 25        38      45     78
+          16       27             55           82
+                    26             48
+                                      52
+                                   49   53
+
+    El arbol no es AVL porque la diferencia de alturas en algunos nodos supera 1.
+        1. Balancear nodo 48 (FB = −2)
+            Subárbol derecho (52) es más alto.
+            Corrección: Rotación simple a la izquierda en 48.
+        2. Balancear nodo 55 (FB=3)
+           Subárbol izquierdo (52) es más alto.
+           Corrección: Rotación simple a la derecha en 55.
+        3.  Balancear nodo 45 (FB=−4)
+           Subárbol derecho (55) es más alto.
+           Corrección: Rotación simple a la izquierda en 45.
+        4. Balancear nodo 32 (FB=2)
+           Subárbol izquierdo (25) es más alto.
+           Corrección: Rotación simple a la derecha en 32.
+        5. Balancear nodo 70 (FB=3)
+           Subárbol izquierdo (45) es más alto.
+           Corrección: Rotación simple a la derecha en 70.
+        6. Balancear nodo 41 (FB=−2)
+           Subárbol derecho (52) es más alto.
+           Corrección: Rotación simple a la izquierda en 41.
+
+                                        52
+                                     /      \
+                                   41        70
+                                  /  \      /  \
+                                32    45  55    78
+                               / \   / \
+                             25  38 48 49
+                             /
+                            16
+
+    B)
+                                      41
+                          32                                       70
+                   25            38                     45              78
+             16        27                       43        55                82
+            7       26                                    48
+
+       El arbol cumple con la condicion de AVL.
+            Nivel 5:
+                   7, 26, 48: Son hojas. FB = 0
+            Nivel 4:
+                   16, 27, 43, 55, 82: FB = 0
+            Nivel 3:
+                   25: 2 - 1 = 1
+                   38: 1 - 2 = -1
+                   45: 1 - 1 = 0
+                   78: 0 - 1 = -1
+            Nivel 2:
+                   32: 2 - 2 = 0
+                   70: 2 - 2 = 0
+            Nivel 1:
+                   41: 3 - 3: 0
