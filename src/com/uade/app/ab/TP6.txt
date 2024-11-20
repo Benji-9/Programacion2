@@ -1,0 +1,6 @@
+3) Dados los siguientes árboles, indicar si los mismos son árboles B, y en caso negativo indicar
+por qué.
+
+    a) No es un arbol B dado que el orden de este arbol es 4 por ende solamente pueden tener 3 claves. El nodo [22, 26, 26, 27, 30] tiene 4.
+    b)El arbol no es un árbol B. Los nodos [7 9 10 11], [22 24 27 46], y [48 54 55 58] tienen 4 claves, lo que excede el maximo de 3 claves permitido para un arbol B de orden 4.
+
