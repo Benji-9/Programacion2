@@ -59,3 +59,17 @@
                    70: 2 - 2 = 0
             Nivel 1:
                    41: 3 - 3: 0
+
+2)
+    A) Agregando el 28. Este se coloca primero debajo del 29. De esta manera no cumple con la Condicion de AVL. y se realiza una Rotacion Simple Derecha.
+                   30
+                 /
+               29
+             /
+           28
+        Luego de la rotacion:
+                   29
+                 /    \
+               28      30
+
+    B)
