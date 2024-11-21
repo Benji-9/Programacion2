@@ -4,37 +4,33 @@ import com.uade.api.ConjuntoTDA;
 import com.uade.util.Nodo;
 
 public class ConjuntoMaximoNoAcotado implements ConjuntoTDA {
-    public Nodo head; // Cabeza de la lista enlazada
+    public Nodo prim;
 
-    // Inicializa el conjunto como vacío
     public void inicializarConjunto() {
-        head = null;
+        prim = null;
     }
 
-    // Agrega un elemento al conjunto si no está ya presente
     public void agregar(int x) {
         if (!pertenece(x)) {
-            Nodo nuevo = new Nodo(x); // Asegúrate de que el constructor exista
-            nuevo.siguiente = head;
-            head = nuevo;
+            Nodo nuevo = new Nodo(x);
+            nuevo.siguiente = prim;
+            prim = nuevo;
         }
     }
 
-    // Elige un elemento del conjunto (en este caso, el primero)
     public int elegir() {
         if (conjuntoVacio()) throw new RuntimeException("Conjunto vacío");
-        return head.valor; // Elegimos el primer elemento para simplicidad
+        return prim.valor;
     }
 
-    // Elimina un elemento del conjunto
     public void sacar(int x) {
-        Nodo actual = head;
+        Nodo actual = prim;
         Nodo anterior = null;
 
         while (actual != null) {
             if (actual.valor == x) {
                 if (anterior == null) {
-                    head = actual.siguiente;
+                    prim = actual.siguiente;
                 } else {
                     anterior.siguiente = actual.siguiente;
                 }
@@ -45,9 +41,8 @@ public class ConjuntoMaximoNoAcotado implements ConjuntoTDA {
         }
     }
 
-    // Verifica si un elemento pertenece al conjunto
     public boolean pertenece(int x) {
-        Nodo actual = head;
+        Nodo actual = prim;
         while (actual != null) {
             if (actual.valor == x) return true;
             actual = actual.siguiente;
@@ -55,8 +50,7 @@ public class ConjuntoMaximoNoAcotado implements ConjuntoTDA {
         return false;
     }
 
-    // Verifica si el conjunto está vacío
     public boolean conjuntoVacio() {
-        return head == null;
+        return prim == null;
     }
 }
