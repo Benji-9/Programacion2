@@ -12,7 +12,6 @@ public class TP3EjercicioA {
     }
 
     private void execute() {
-        // Inicializar diccionarios
         DiccionarioMultipleTDA D1 = new DiccionarioMultipleTDAImpl();
         DiccionarioMultipleTDA D2 = new DiccionarioMultipleTDAImpl();
 
