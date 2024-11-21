@@ -19,29 +19,25 @@ public class TP3EjercicioA {
         D1.inicializarDiccionario();
         D2.inicializarDiccionario();
 
-        // Cargar datos en D1
         D1.agregar(1, 10);
         D1.agregar(1, 20);
         D1.agregar(2, 30);
         D1.agregar(3, 40);
 
-        // Cargar datos en D2
         D2.agregar(1, 20);
         D2.agregar(1, 50);
         D2.agregar(3, 40);
         D2.agregar(4, 60);
 
-        // Realizar operaciones
         DiccionarioMultipleTDA unionClaves = unionClavesConValores(D1, D2);
         DiccionarioMultipleTDA unionValoresComunes = unionClavesConValoresComunes(D1, D2);
         DiccionarioMultipleTDA clavesComunes = clavesComunesConValores(D1, D2);
         DiccionarioMultipleTDA valoresComunes = clavesComunesConValoresComunes(D1, D2);
 
-        // Mostrar resultados
-        System.out.println("Unión de claves con todos los valores:");
+        System.out.println("Union de claves con todos los valores:");
         OperacionDiccionario.mostrarDiccionario(unionClaves);
 
-        System.out.println("Unión de claves con valores comunes:");
+        System.out.println("Union de claves con valores comunes:");
         OperacionDiccionario.mostrarDiccionario(unionValoresComunes);
 
         System.out.println("Claves comunes con todos los valores:");
