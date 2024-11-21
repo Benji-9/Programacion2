@@ -30,7 +30,7 @@ public class TP6Ejercicio8 {
 
         ConjuntoTDA puentes = obtenerPuentes(grafo, v1, v2);
 
-        System.out.println("Vértices puente entre " + v1 + " y " + v2 + ":");
+        System.out.println("Vertices puente entre " + v1 + " y " + v2 + ":");
         while (!puentes.conjuntoVacio()) {
             int puente = puentes.elegir();
             System.out.print(puente + " ");

@@ -15,7 +15,6 @@ public class TP6Ejercicio6 {
         GrafoTDA grafo = new GrafoTDAImpl();
         grafo.inicializarGrafo();
 
-        // Ejemplo: Inicializar el grafo con vértices y aristas
         grafo.agregarVertices(1);
         grafo.agregarVertices(2);
         grafo.agregarVertices(3);
@@ -28,7 +27,7 @@ public class TP6Ejercicio6 {
 
         ConjuntoTDA predecesores = obtenerPredecesores(grafo, v);
 
-        System.out.println("Predecesores del vértice " + v + ":");
+        System.out.println("Predecesores del vertice " + v + ":");
         while (!predecesores.conjuntoVacio()) {
             int pred = predecesores.elegir();
             System.out.print(pred + " ");

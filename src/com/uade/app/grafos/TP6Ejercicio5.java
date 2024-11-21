@@ -14,7 +14,6 @@ public class TP6Ejercicio5 {
         GrafoTDA grafo = new GrafoTDAImpl();
         grafo.inicializarGrafo();
 
-        // Ejemplo: Inicializar el grafo con vértices y aristas
         grafo.agregarVertices(1);
         grafo.agregarVertices(2);
         grafo.agregarVertices(3);
@@ -23,13 +22,13 @@ public class TP6Ejercicio5 {
         grafo.agregarArista(1, 3, 20);
         grafo.agregarArista(2, 3, 5);
 
-        int vertice = 1; // Vértice del cual calcular el mayor costo de aristas salientes
+        int vertice = 1;
         int maxCosto = calcularMayorCostoAristasSalientes(grafo, vertice);
 
         if (maxCosto == -1) {
-            System.out.println("El vértice " + vertice + " no tiene aristas salientes.");
+            System.out.println("El vertice " + vertice + " no tiene aristas salientes.");
         } else {
-            System.out.println("El mayor costo de las aristas salientes del vértice " + vertice + " es: " + maxCosto);
+            System.out.println("El mayor costo de las aristas salientes del vertice " + vertice + " es: " + maxCosto);
         }
     }
 

@@ -27,7 +27,7 @@ public class TP6Ejercicio9 {
         int v = 1;
         int grado = calcularGrado(grafo, v);
 
-        System.out.println("El grado del vértice " + v + " es: " + grado);
+        System.out.println("El grado del vertice " + v + " es: " + grado);
     }
 
     private int calcularGrado(GrafoTDA grafo, int v) {

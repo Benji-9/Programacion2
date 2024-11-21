@@ -25,7 +25,7 @@ public class TP6Ejercicio7 {
 
         ConjuntoTDA aislados = obtenerVerticesAislados(grafo);
 
-        System.out.println("Vértices aislados:");
+        System.out.println("Vertices aislados:");
         while (!aislados.conjuntoVacio()) {
             int vertice = aislados.elegir();
             System.out.print(vertice + " ");
