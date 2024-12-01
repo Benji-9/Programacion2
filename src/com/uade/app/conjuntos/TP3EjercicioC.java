@@ -11,32 +11,32 @@ public class TP3EjercicioC {
     }
 
     private void execute() {
-        ConjuntoTDA A = new ConjuntoTDAImpl();
-        ConjuntoTDA B = new ConjuntoTDAImpl();
+        ConjuntoTDA a = new ConjuntoTDAImpl();
+        ConjuntoTDA b = new ConjuntoTDAImpl();
 
-        A.inicializarConjunto();
-        B.inicializarConjunto();
+        a.inicializarConjunto();
+        b.inicializarConjunto();
 
-        A.agregar(1);
-        A.agregar(2);
-        A.agregar(3);
-        B.agregar(1);
-        B.agregar(2);
-        B.agregar(3);
+        a.agregar(1);
+        a.agregar(2);
+        a.agregar(3);
+        b.agregar(1);
+        b.agregar(2);
+        b.agregar(3);
 
-        boolean sonIguales = conjuntosIguales(A, B);
+        boolean sonIguales = conjuntosIguales(a, b);
         System.out.println("¿Son iguales los conjuntos A y B? " + (sonIguales ? "Sí" : "No"));
     }
 
-    private static boolean conjuntosIguales(ConjuntoTDA A, ConjuntoTDA B) {
-        ConjuntoTDA tempA = OperacionConjunto.copiarConjunto(A);
-        ConjuntoTDA tempB = OperacionConjunto.copiarConjunto(B);
+    private static boolean conjuntosIguales(ConjuntoTDA a, ConjuntoTDA b) {
+        ConjuntoTDA tempA = OperacionConjunto.copiarConjunto(a);
+        ConjuntoTDA tempB = OperacionConjunto.copiarConjunto(b);
 
         while (!tempA.conjuntoVacio()) {
             int elemento = tempA.elegir();
             tempA.sacar(elemento);
 
-            if (!B.pertenece(elemento)) {
+            if (!b.pertenece(elemento)) {
                 return false;
             }
         }
@@ -45,7 +45,7 @@ public class TP3EjercicioC {
             int elemento = tempB.elegir();
             tempB.sacar(elemento);
 
-            if (!A.pertenece(elemento)) {
+            if (!a.pertenece(elemento)) {
                 return false;
             }
         }

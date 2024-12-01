@@ -15,22 +15,22 @@ public class TP3EjercicioE {
     }
 
     private void execute() {
-        PilaTDA P = new PilaTDAImpl();
-        ColaTDA C = new ColaTDAImpl();
+        PilaTDA p = new PilaTDAImpl();
+        ColaTDA c = new ColaTDAImpl();
 
-        P.inicializarPila();
-        C.inicializarCola();
+        p.inicializarPila();
+        c.inicializarCola();
 
-        P.apilar(1);
-        P.apilar(2);
-        P.apilar(3);
+        p.apilar(1);
+        p.apilar(2);
+        p.apilar(3);
 
-        C.acolar(3);
-        C.acolar(2);
-        C.acolar(4);
+        c.acolar(3);
+        c.acolar(2);
+        c.acolar(4);
 
 
-        ConjuntoTDA comunes = elementosComunesPilaCola(P, C);
+        ConjuntoTDA comunes = elementosComunesPilaCola(p, c);
 
         System.out.println("Elementos comunes entre Pila P y Cola C:");
         OperacionConjunto.mostrarConjunto(comunes);
@@ -43,46 +43,46 @@ public class TP3EjercicioE {
         return OperacionConjunto.interseccion(conjuntoPila, conjuntoCola);
     }
 
-    private static ConjuntoTDA generarConjuntoDesdePila(PilaTDA P) {
+    private static ConjuntoTDA generarConjuntoDesdePila(PilaTDA p) {
         ConjuntoTDA conjunto = new ConjuntoTDAImpl();
         conjunto.inicializarConjunto();
 
         PilaTDA auxPila = new PilaTDAImpl();
         auxPila.inicializarPila();
 
-        while (!P.pilaVacia()) {
-            int elemento = P.tope();
+        while (!p.pilaVacia()) {
+            int elemento = p.tope();
             conjunto.agregar(elemento);
             auxPila.apilar(elemento);
-            P.desapilar();
+            p.desapilar();
         }
 
         while (!auxPila.pilaVacia()) {
             int elemento = auxPila.tope();
-            P.apilar(elemento);
+            p.apilar(elemento);
             auxPila.desapilar();
         }
 
         return conjunto;
     }
 
-    private static ConjuntoTDA generarConjuntoDesdeCola(ColaTDA C) {
+    private static ConjuntoTDA generarConjuntoDesdeCola(ColaTDA c) {
         ConjuntoTDA conjunto = new ConjuntoTDAImpl();
         conjunto.inicializarConjunto();
 
         ColaTDA auxCola = new ColaTDAImpl();
         auxCola.inicializarCola();
 
-        while (!C.colaVacia()) {
-            int elemento = C.primero();
+        while (!c.colaVacia()) {
+            int elemento = c.primero();
             conjunto.agregar(elemento);
             auxCola.acolar(elemento);
-            C.desacolar();
+            c.desacolar();
         }
 
         while (!auxCola.colaVacia()) {
             int elemento = auxCola.primero();
-            C.acolar(elemento);
+            c.acolar(elemento);
             auxCola.desacolar();
         }
 

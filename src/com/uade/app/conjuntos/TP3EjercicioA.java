@@ -11,36 +11,36 @@ public class TP3EjercicioA {
     }
 
     private void execute() {
-        ConjuntoTDA A = new ConjuntoTDAImpl();
-        ConjuntoTDA B = new ConjuntoTDAImpl();
+        ConjuntoTDA a = new ConjuntoTDAImpl();
+        ConjuntoTDA b = new ConjuntoTDAImpl();
 
-        A.inicializarConjunto();
-        B.inicializarConjunto();
+        a.inicializarConjunto();
+        b.inicializarConjunto();
 
-        A.agregar(1);
-        A.agregar(2);
-        A.agregar(3);
-        B.agregar(3);
-        B.agregar(4);
-        B.agregar(5);
+        a.agregar(1);
+        a.agregar(2);
+        a.agregar(3);
+        b.agregar(3);
+        b.agregar(4);
+        b.agregar(5);
 
-        ConjuntoTDA diferenciaSimetrica = calcularDiferenciaSimetrica(A, B);
+        ConjuntoTDA diferenciaSimetrica = calcularDiferenciaSimetrica(a, b);
 
         System.out.println("Diferencia simétrica entre A y B:");
         OperacionConjunto.mostrarConjunto(diferenciaSimetrica);
     }
 
-    private static ConjuntoTDA calcularDiferenciaSimetrica(ConjuntoTDA A, ConjuntoTDA B) {
+    private static ConjuntoTDA calcularDiferenciaSimetrica(ConjuntoTDA a, ConjuntoTDA b) {
         ConjuntoTDA resultado = new ConjuntoTDAImpl();
         resultado.inicializarConjunto();
 
-        ConjuntoTDA tempA = OperacionConjunto.copiarConjunto(A);
-        ConjuntoTDA tempB = OperacionConjunto.copiarConjunto(B);
+        ConjuntoTDA tempA = OperacionConjunto.copiarConjunto(a);
+        ConjuntoTDA tempB = OperacionConjunto.copiarConjunto(b);
 
         while (!tempA.conjuntoVacio()) {
             int elemento = tempA.elegir();
             tempA.sacar(elemento);
-            if (!B.pertenece(elemento)) {
+            if (!b.pertenece(elemento)) {
                 resultado.agregar(elemento);
             }
         }
@@ -48,7 +48,7 @@ public class TP3EjercicioA {
         while (!tempB.conjuntoVacio()) {
             int elemento = tempB.elegir();
             tempB.sacar(elemento);
-            if (!A.pertenece(elemento)) {
+            if (!a.pertenece(elemento)) {
                 resultado.agregar(elemento);
             }
         }

@@ -11,30 +11,30 @@ public class TP3EjercicioB {
     }
 
     private void execute() {
-        ConjuntoTDA A = new ConjuntoTDAImpl();
-        ConjuntoTDA B = new ConjuntoTDAImpl();
+        ConjuntoTDA a = new ConjuntoTDAImpl();
+        ConjuntoTDA b = new ConjuntoTDAImpl();
 
-        A.inicializarConjunto();
-        B.inicializarConjunto();
+        a.inicializarConjunto();
+        b.inicializarConjunto();
 
-        A.agregar(1);
-        A.agregar(2);
-        A.agregar(3);
-        B.agregar(3);
-        B.agregar(4);
-        B.agregar(5);
+        a.agregar(1);
+        a.agregar(2);
+        a.agregar(3);
+        b.agregar(3);
+        b.agregar(4);
+        b.agregar(5);
 
 
-        ConjuntoTDA diferenciaSimetrica = calcularDiferenciaSimetrica(A, B);
+        ConjuntoTDA diferenciaSimetrica = calcularDiferenciaSimetrica(a, b);
 
         System.out.println("Diferencia simétrica entre A y B:");
         OperacionConjunto.mostrarConjunto(diferenciaSimetrica);
     }
 
-    private static ConjuntoTDA calcularDiferenciaSimetrica(ConjuntoTDA A, ConjuntoTDA B) {
+    private static ConjuntoTDA calcularDiferenciaSimetrica(ConjuntoTDA a, ConjuntoTDA b) {
         // Diferencia simétrica = Unión - Intersección
-        ConjuntoTDA union = OperacionConjunto.union(A, B);
-        ConjuntoTDA interseccion = OperacionConjunto.interseccion(A, B);
+        ConjuntoTDA union = OperacionConjunto.union(a, b);
+        ConjuntoTDA interseccion = OperacionConjunto.interseccion(a, b);
         return OperacionConjunto.diferencia(union, interseccion);
     }
 }
